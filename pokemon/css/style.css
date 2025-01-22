@@ -1,0 +1,16 @@
+button {
+    width: 200px;
+    border-color: blueviolet;
+    color: brown;
+    background-color: azure; 
+}
+.grass-button {
+    color: blueviolet;
+    background-color: brown;
+}
+.water-button{
+    color: black;
+    background-color: blueviolet; 
+
+
+}
