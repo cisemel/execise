@@ -1,0 +1,62 @@
+
+
+
+import emoji
+from collections import Counter
+
+filename = r"C:\Users\Çisem\Desktop\VISUAL STUDIO CODE\finalwork\raquel_chat.txt"
+count = 0
+
+def get_emojis(message):
+    emojis = []
+    for character in messages:
+        if charachter not in EMOJI_DATA:
+            emojis.append(character)
+        return emojis
+    
+def get_emojis(message):
+   
+    return [char for char in message if char in emoji.EMOJI_DATA]
+
+def get_author(message):
+    try:
+        return message.split("~")[1].split(":")[0]
+    except IndexError:
+        return None
+def get_author(message):
+    try:
+        return message.split("~")[1].split(":")[0]
+    except IndexError:
+        return None
+messages = []
+with open(filename, encoding="utf-8") as file:
+    for line in file:
+        messages.append(line)
+        
+
+count = len(messages)
+print(f"there are {count} messages in the chat")
+
+
+authors = [get_author(message) for message in messages if message is not None]
+authors_counter = Counter(authors)
+authors = []
+
+
+    
+
+for (author, count) in authors_counter.most_common():
+    print(f"{author} wrote {count} messages")
+
+  
+
+emoji_list = []
+for message in messages:
+    emoji_list.extend(get_emojis(message))
+
+emoji_counter = Counter(emoji_list)
+
+
+print("\nMost popular emojis:")
+for emoji_char, count in emoji_counter.most_common(10):  
+    print(f"{emoji_char} used {count} times.")
